@@ -1,0 +1,3 @@
+function sommeDeuxMin(tableau) {
+    
+    }

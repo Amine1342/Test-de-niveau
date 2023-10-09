@@ -3,9 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercuice 1</title>
+    <title>Exercice 1</title>
   </head>
+
   <body>
-    <script src="Ex1.js"></script>
+    <script>
+      var tableau = [];
+
+      function sommeDeuxMin(tableau) {
+        var min = Infinity;
+        var min2 = Infinity;
+        var somme = 0;
+        for (var i = 0; i < tableau.length; i++) {
+          if (tableau[i] < min) {
+            min2 = min;
+            min = tableau[i];
+          } else if (tableau[i] < min2) {
+            min2 = tableau[i];
+          }
+          somme = min + min2;
+
+          console.log("Voici le tableau aléatoire : " + tableau);
+        }
+        return "Voici la somme des deux minimums positifs : " + somme;
+      }
+
+      for (var i = 0; i < 5; i++) {
+        tableau[i] = Math.floor(Math.random() * 100);
+      }
+      console.log(sommeDeuxMin(tableau));
+    </script>
   </body>
 </html>

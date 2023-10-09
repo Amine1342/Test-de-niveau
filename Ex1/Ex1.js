@@ -1,3 +1,0 @@
-function sommeDeuxMin(tableau) {
-    
-    }

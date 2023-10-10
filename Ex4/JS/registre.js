@@ -65,21 +65,21 @@ function registerEmployee(e) {
   e.preventDefault();
 
   // Récupérer les valeurs des inputs //
-  var nom = document.getElementById("employee-last-name");
+  var nomEmp = document.getElementById("employee-last-name");
   var prenom = document.getElementById("employee-first-name");
-  var email = document.getElementById("employee-email");
-  var adresse = document.getElementById("employee-address");
+  var emailEmp = document.getElementById("employee-email");
+  var adresseEmp = document.getElementById("employee-address");
   var societe = document.getElementById("employee-company");
   var formValid = true;
 
   // Vérifier les valeurs des inputs //
-  if (nom.value == "") {
-    nom.classList.remove("is-valid");
-    nom.classList.add("is-invalid");
+  if (nomEmp.value == "") {
+    nomEmp.classList.remove("is-valid");
+    nomEmp.classList.add("is-invalid");
     formValid = false;
   } else {
-    nom.classList.remove("is-invalid");
-    nom.classList.add("is-valid");
+    nomEmp.classList.remove("is-invalid");
+    nomEmp.classList.add("is-valid");
     formValid = true;
   }
 
@@ -93,31 +93,42 @@ function registerEmployee(e) {
     formValid = true;
   }
 
-  if (email.value == "") {
-    email.classList.remove("is-valid");
-    email.classList.add("is-invalid");
+  if (emailEmp.value == "") {
+    emailEmp.classList.remove("is-valid");
+    emailEmp.classList.add("is-invalid");
     formValid = false;
   } else {
-    email.classList.remove("is-invalid");
-    email.classList.add("is-valid");
+    emailEmp.classList.remove("is-invalid");
+    emailEmp.classList.add("is-valid");
     formValid = true;
   }
 
-  if (adresse.value == "") {
-    adresse.classList.remove("is-valid");
-    adresse.classList.add("is-invalid");
+  if (adresseEmp.value == "") {
+    adresseEmp.classList.remove("is-valid");
+    adresseEmp.classList.add("is-invalid");
     formValid = false;
   } else {
-    adresse.classList.remove("is-invalid");
-    adresse.classList.add("is-valid");
+    adresseEmp.classList.remove("is-invalid");
+    adresseEmp.classList.add("is-valid");
+    formValid = true;
+  }
+
+  if (societe.value == "") {
+    societe.classList.remove("is-valid");
+    societe.classList.add("is-invalid");
+    formValid = false;
+  } else {
+    societe.classList.remove("is-invalid");
+    societe.classList.add("is-valid");
     formValid = true;
   }
 
   var employee = {
-    nom: nom.value,
+    nom: nomEmp.value,
     prenom: prenom.value,
-    email: email.value,
-    adresse: adresse.value,
+    email: emailEmp.value,
+    adresse: adresseEmp.value,
+    company: societe.value,
   };
 
   // Ajouter un employé au localStorage //

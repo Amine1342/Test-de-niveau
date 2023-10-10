@@ -4,14 +4,14 @@ function loadCompaniesData() {
     var body = document.getElementById("companies-tables");
 
     // Afficher les sociétés avec la fonction map //
-    companies.map((campany, index) => {
+    companies.map((company, index) => {
         body.innerHTML += `
 
           <tr> 
-          <td>${campany.nom} </td>
-          <td>${campany.adresse}</td>
-          <td>${campany.email}</td>
-          <td>${campany.employees}</td>
+          <td>${company.nom} </td>
+          <td>${company.adresse}</td>
+          <td>${company.email}</td>
+          <td>${company.employees}</td>
           
           <td><button class="btn btn-danger" onClick="supprimer(${index})">Supprimer</button> 
               
@@ -81,7 +81,7 @@ function loadEmployeesData() {
           <td>${employee.prenom} </td>
           <td>${employee.email}</td>
           <td>${employee.adresse}</td>
-          <td>${employee.campany}</td>
+          <td>${employee.company}</td>
           
           <td><button class="btn btn-danger" onClick="supprimerEmployee(${index})">Supprimer</button> 
               
@@ -109,31 +109,31 @@ function supprimerEmployee(index) {
 }
 
 // Ajouter un employé avec le bouton //
-var nom = document.getElementById("employee-last-name");
-var prenom = document.getElementById("employee-first-name");
-var email = document.getElementById("email");
-var adresse = document.getElementById("adresse");
-var company = document.getElementById("company");
+var nomEmp = document.getElementById("last-name");
+var prenom = document.getElementById("first-name");
+var emailEmp = document.getElementById("email");
+var adresseEmp = document.getElementById("adresse");
+var company = document.getElementById("companyInput");
 
 // Ajouter un employé //
 var position2 = 0;
-function getdata(index) {
+function getEmployeesdata(index) {
     console.log(index);
-    nom.value = employees[index].nom;
+    nomEmp.value = employees[index].nom;
     prenom.value = employees[index].prenom;
-    email.value = employees[index].email;
-    adresse.value = employees[index].adresse;
-    company.value = employees[index].company;
+    emailEmp.value = employees[index].email;
+    adresseEmp.value = employees[index].adresse;
+    companyInput.value = employees[index].company;
     position2 = index;
 }
 
 // Modifier un employé //
 function updateEmployeedata() {
     var employee = {
-        nom: nom.value,
+        nom: nomEmp.value,
         prenom: prenom.value,
-        email: email.value,
-        adresse: adresse.value,
+        email: emailEmp.value,
+        adresse: adresseEmp.value,
         company: company.value,
     };
     employees.splice(position2, 1, employee);
